@@ -27,7 +27,6 @@ def main(page:ft.Page):
             page.update()
 
     def guardar_datos():
-        
         snackbar = ft.SnackBar(ft.Text("Datos guardados correctamente"), show_close_icon=True, bgcolor="green")
         page.snack_bar = snackbar
         snackbar.open = True
@@ -42,9 +41,20 @@ def main(page:ft.Page):
     drpGrado = ft.Dropdown(label="Seleccione su grado", options=opciones)
 
     txtCorreo = ft.TextField(label="Correo")
-
-    division = [ft.dropdown.Option("DACyTI"),
-                ft.dropdown.Option("DAEA")]
+    
+    division = [ft.dropdown.Option("DACA"),
+                ft.dropdown.Option("DACB"),
+                ft.dropdown.Option("DACBiol"),
+                ft.dropdown.Option("DACEA"),
+                ft.dropdown.Option("DACS"),
+                ft.dropdown.Option("DACSyH"),
+                ft.dropdown.Option("DACyTI"),
+                ft.dropdown.Option("DAEA"),
+                ft.dropdown.Option("DAIA"),
+                ft.dropdown.Option("DAMC"),
+                ft.dropdown.Option("DAMJM"),
+                ft.dropdown.Option("DAMR")
+                    ]
     drpDivision = ft.Dropdown(label="Seleccione su división", options=division)
     
     btnGuardar = ft.ElevatedButton("Guardar", icon="save", 
