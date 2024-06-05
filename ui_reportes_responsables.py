@@ -13,7 +13,6 @@ def main(page: ft.Page):
         {"ID": "PPC01592", "nombre": "Pablo Payró Campos", "grado": "Doctor", "correo": "pablo.payro@ujat.mx", "division": "DACyTI"}
     ]
 
-    # Construir filas de la tabla
     for responsable in responsables:
         celda1 = ft.DataCell(ft.Text(responsable["ID"]))
         celda2 = ft.DataCell(ft.Text(responsable["nombre"]))
@@ -23,10 +22,8 @@ def main(page: ft.Page):
         fila = ft.DataRow(cells=[celda1, celda2, celda3, celda4, celda5])
         lista_tabla.append(fila)
 
-    # Encabezado de la tabla
     encabezado = [ft.DataColumn(ft.Text("ID")), ft.DataColumn(ft.Text("Nombre")), ft.DataColumn(ft.Text("Grado")), ft.DataColumn(ft.Text("Correo")), ft.DataColumn(ft.Text("División"))]
 
-    # Crear la tabla
     tblResponsable = ft.DataTable(columns=encabezado, rows=lista_tabla, heading_row_color="grey200", border=ft.border.all(2,"grey200"))
 
     columna = ft.Column([tblResponsable])
