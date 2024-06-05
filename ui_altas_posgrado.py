@@ -110,4 +110,4 @@ def main(page: ft.Page):
     return columna
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(main, view=ft.AppView.WEB_BROWSER)
