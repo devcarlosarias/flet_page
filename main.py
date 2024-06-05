@@ -1,6 +1,5 @@
 import flet as ft
 
-
 def main(page: ft.Page):
     
     page.title = "Sistema Posgrado"
@@ -11,8 +10,8 @@ def main(page: ft.Page):
                        color="white")
     page.appbar = appBar
        
-    txtBienvenido = ft.Text("¡Bienvenido!", size=24, text_align="center", width=page.window_width, color="green")
-    txtDatos = ft.Text("Av. Universidad s/n, Zona de la Cultura, Col. Magisterial, Vhsa, Centro, Tabasco, Mex. C.P. 86040. Tel (993) 358 15 00", size=10, text_align="center", width=page.window_width, color="green", height=200)
+    txtBienvenido = ft.Text("¡Bienvenido!", size=24, text_align="center", color="green")
+    txtDatos = ft.Text("Av. Universidad s/n, Zona de la Cultura, Col. Magisterial, Vhsa, Centro, Tabasco, Mex. C.P. 86040. Tel (993) 358 15 00", size=10, text_align="center", color="green",)
     
     page.add(txtBienvenido)
     page.add(txtDatos)
