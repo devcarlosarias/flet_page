@@ -3,6 +3,8 @@ import ui_altas_posgrado
 import ui_alta_responsable
 import ui_baja_posgrado
 import ui_reportes_posgrado
+import ui_reportes_responsables
+import ui_reportes_division
 
 
 def main(page: ft.Page):
@@ -19,7 +21,13 @@ def main(page: ft.Page):
             contenedorPrincipal.update()
         elif e.control.selected_index == 3:
             contenedorPrincipal.content= ui_reportes_posgrado.main(page)
-            contenedorPrincipal.update()                 
+            contenedorPrincipal.update()        
+        elif e.control.selected_index == 4:
+            contenedorPrincipal.content= ui_reportes_responsables.main(page)
+            contenedorPrincipal.update()
+        elif e.control.selected_index == 5:
+            contenedorPrincipal.content= ui_reportes_division.main(page)
+            contenedorPrincipal.update()            
             
     page.title = "Sistema Posgrado"
     page.theme_mode = "light"
