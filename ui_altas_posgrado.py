@@ -65,10 +65,15 @@ def main(page: ft.Page):
                 ft.dropdown.Option("DAMJM"),
                 ft.dropdown.Option("DAMR")
                 ]
-    
     drpDivision = ft.Dropdown(label="Seleccione su división", options=division)
-    
-    drpResponsable = ft.Dropdown(label="Seleccione su responsable", options=None)
+
+    responsable = [ft.dropdown.Option("Miguel Antonio Wister Ovando"),
+                   ft.dropdown.Option("Eddy Arquímedes García Alcocer"),
+                   ft.dropdown.Option("Erika Yunuen Morales Mateos"),
+                   ft.dropdown.Option("Oscar Alberto Chávez Bosquez"),
+                   ft.dropdown.Option("Pablo Payró Campos")
+                ]
+    drpResponsable = ft.Dropdown(label="Seleccione su responsable", options=responsable)
         
     chkSNP = ft.Checkbox()
     textSNP = ft.Text("Pertenece al SNP", size=16,)
