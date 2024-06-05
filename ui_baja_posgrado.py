@@ -57,7 +57,7 @@ def main(page:ft.Page):
 
     posgrado = [ft.dropdown.Option("Ciencias De La Computación"),
                 ft.dropdown.Option("Tecnologías De La Información")]
-    drpPosgrado = ft.Dropdown(label="Seleccione el posgrado", options=posgrado, on_change=mostrar_datos)
+    drpPosgrado = ft.Dropdown(label="Seleccione el posgrado", on_change=mostrar_datos)
 
     etiqueta = ft.Text("¿Seguro que desea dar de baja este Programa?", size=18, visible=False)
     filaEtiqueta = ft.Row([etiqueta], alignment="center")
