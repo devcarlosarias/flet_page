@@ -10,9 +10,25 @@ def main(page: ft.Page):
                        bgcolor="green", 
                        color="white")
     page.appbar = appBar
-        
-    txtBienvenido = ft.Text("¡Bienvenido! hola a todos")
-    page.add(txtBienvenido)
+    
+    logo_ujat = ft.Image(src="icon.png", width=200)
+    filaLogo = ft.Row([logo_ujat], alignment="center")
+
+
+
+    
+    txtBienvenido = ft.Text("¡Bienvenido! Hola Flet")
+
+    contenido = ft.Column(
+        [txtBienvenido,filaLogo], 
+        alignment="center",
+        spacing=50
+    )    
+
+    contenedorPrincipal = ft.Container(content=contenido, expand=True)
+    fila = ft.Row([navRail, contenedorPrincipal], expand=True)    
+    
+    page.add(fila)
     page.update()    
 
 ft.app(main, view=ft.AppView.WEB_BROWSER)
