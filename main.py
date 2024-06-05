@@ -1,6 +1,7 @@
 import flet as ft
 import ui_altas_posgrado
 import ui_alta_responsable
+import ui_baja_posgrado
 
 def main(page: ft.Page):
 
@@ -10,7 +11,11 @@ def main(page: ft.Page):
             contenedorPrincipal.update()    
         elif e.control.selected_index == 1:
             contenedorPrincipal.content= ui_alta_responsable.main(page)
-            contenedorPrincipal.update()                
+            contenedorPrincipal.update()
+        elif e.control.selected_index == 2:
+            contenedorPrincipal.content= ui_baja_posgrado.main(page)
+            contenedorPrincipal.update()            
+            
     
     page.title = "Sistema Posgrado"
     page.theme_mode = "light"
