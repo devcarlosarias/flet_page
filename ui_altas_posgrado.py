@@ -32,44 +32,11 @@ def main(page: ft.Page):
             page.update()
                    
     def guardar_datos():
-
-
-        # Mostrar snackbar de OK
         snackbar = ft.SnackBar(ft.Text("Datos guardados correctamente"), show_close_icon=True, bgcolor="green")
         page.snack_bar = snackbar
         snackbar.open = True
         page.update()
- 
-
-        # Guardar datos del posgrado en la base de datos
-        try:
-            p = Posgrado.create(nombre=txtPosgrado.value.strip(),
-                                tipo=drpTipo.value,
-                                orientacion=drpOrientacion.value,
-                                #orientacion=radOrientacion.value,
-                                modalidad=drpModalidad.value,
-
-                                id_division=drpDivision.value,
-                                id_responsable=drpResponsable.value,
-                                snp=chkSNP.value)
-                                
-            print("Datos Guardados Exitosamente")
         
-        except pw.IntegrityError as error:
-            print("Error SQLite", error) 
-
-
-
-    page.window_width = 420
-    page.window_height = 640
-    page.title = "Sistema Posgrado"
-    page.theme_mode = "light"
-    appBar = ft.AppBar(title=ft.Text("Nuevo Posgrado"), 
-                       center_title=True, 
-                       bgcolor="green", 
-                       color="white")
-    page.appbar = appBar
-    
     txtPosgrado = ft.TextField(label="Nombre del posgrado")
     
     tipo = [ft.dropdown.Option("Especialidad"),
@@ -81,13 +48,24 @@ def main(page: ft.Page):
                 ft.dropdown.Option("Investigación")]
     drpOrientacion = ft.Dropdown(label="Seleccione su orientación", options=orientacion)    
 
-
     modalidad = [ft.dropdown.Option("Escolarizado"),
                 ft.dropdown.Option("No Escolarizado")]
     drpModalidad = ft.Dropdown(label="Seleccione su modalidad", options=modalidad)
     
-    division = [ft.dropdown.Option("DACyTI"),
-                ft.dropdown.Option("DAEA")]
+    division = [ft.dropdown.Option("DACA"),
+                ft.dropdown.Option("DACB"),
+                ft.dropdown.Option("DACBiol"),
+                ft.dropdown.Option("DACEA"),
+                ft.dropdown.Option("DACS"),
+                ft.dropdown.Option("DACSyH"),
+                ft.dropdown.Option("DACyTI"),
+                ft.dropdown.Option("DAEA"),
+                ft.dropdown.Option("DAIA"),
+                ft.dropdown.Option("DAMC"),
+                ft.dropdown.Option("DAMJM"),
+                ft.dropdown.Option("DAMR")
+                ]
+    
     drpDivision = ft.Dropdown(label="Seleccione su división", options=division)
     
     drpResponsable = ft.Dropdown(label="Seleccione su responsable", options=None)
