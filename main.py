@@ -1,6 +1,12 @@
 import flet as ft
+import ui_altas_posgrado
 
 def main(page: ft.Page):
+
+    def mostrar_opcion(e:ft.ControlEvent):
+        if e.control.selected_index == 0:
+            contenedorPrincipal.content= ui_altas_posgrado.main(page)
+            contenedorPrincipal.update()    
     
     page.title = "Sistema Posgrado"
     page.theme_mode = "light"
@@ -34,7 +40,7 @@ def main(page: ft.Page):
     
     listaBotones = [btnNuevoPosgrado, btnNuevoResponsable, btnBajaPosgrado, btnReportesPosgrado, btnReportesResponsable, btnReportesDivision]
     
-    navRail = ft.NavigationRail(bgcolor="green50", destinations=listaBotones)
+    navRail = ft.NavigationRail(bgcolor="green50", destinations=listaBotones, on_change=mostrar_opcion)
     contenedorPrincipal = ft.Container(content=contenido, expand=True)
     fila = ft.Row([navRail, contenedorPrincipal], expand=True)
     
