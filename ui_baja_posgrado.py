@@ -6,6 +6,16 @@ def main(page:ft.Page):
         etiqueta.visible = True
         page.update()
 
+    def mostrar_posgrados(e:ft.ControlEvent):
+        lista_posgrado = [ft.dropdown.Option("Doctorado Interinstitucional en Ciencias de la Computación"),
+                ft.dropdown.Option("Doctorado en Ciencias de la Computación"),
+                ft.dropdown.Option("Maestría en Administración de Tecnologías de la Información"),
+                ft.dropdown.Option("Maestría en Tecnologías para el Aprendizaje y el Conocimiento"),
+                ft.dropdown.Option("Maestría en Ciencias de la Computación"),
+                ft.dropdown.Option("Doctorado en Gestión de Tecnologías de la Información")]
+        drpPosgrado.options = lista_posgrado
+        drpPosgrado.update()         
+
     def cerrar_ventana(e:ft.ControlEvent):
         page.window_close()    
             
@@ -25,15 +35,25 @@ def main(page:ft.Page):
             page.update()
 
     def guardar_datos():
-
         snackbar = ft.SnackBar(ft.Text("Datos guardados correctamente"), show_close_icon=True, bgcolor="green")
         page.snack_bar = snackbar
         snackbar.open = True
         page.update()
-
-    division = [ft.dropdown.Option("DACyTI"),
-                ft.dropdown.Option("DAEA")]
-    drpDivision = ft.Dropdown(label="Seleccione su división", options=division)
+    
+    division = [ft.dropdown.Option("DACA"),
+                ft.dropdown.Option("DACB"),
+                ft.dropdown.Option("DACBiol"),
+                ft.dropdown.Option("DACEA"),
+                ft.dropdown.Option("DACS"),
+                ft.dropdown.Option("DACSyH"),
+                ft.dropdown.Option("DACyTI"),
+                ft.dropdown.Option("DAEA"),
+                ft.dropdown.Option("DAIA"),
+                ft.dropdown.Option("DAMC"),
+                ft.dropdown.Option("DAMJM"),
+                ft.dropdown.Option("DAMR")
+                ]
+    drpDivision = ft.Dropdown(label="Seleccione su división", options=division, on_change=mostrar_posgrados)
 
     posgrado = [ft.dropdown.Option("Ciencias De La Computación"),
                 ft.dropdown.Option("Tecnologías De La Información")]
