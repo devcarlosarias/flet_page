@@ -1,6 +1,6 @@
 import peewee as pw
 
-bd_posgrado = pw.SqliteDatabase("posgrado.sqlite3")
+bd_posgrado = pw.SqliteDatabase("https://github.com/vjcarlosedit/flet_page/raw/main/posgrado.sqlite3")
 
 class Division(pw.Model):
     id_division = pw.TextField(primary_key=True)
