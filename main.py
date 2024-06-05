@@ -2,24 +2,20 @@ import flet as ft
 import ui_altas_posgrado
 import ui_alta_responsable
 import ui_baja_posgrado
-import ui_reportes_posgrado
 
 def main(page: ft.Page):
 
     def mostrar_opcion(e:ft.ControlEvent):
         if e.control.selected_index == 0:
             contenedorPrincipal.content= ui_altas_posgrado.main(page)
-            contenedorPrincipal.update()    
+            contenedorPrincipal.update()
         elif e.control.selected_index == 1:
             contenedorPrincipal.content= ui_alta_responsable.main(page)
             contenedorPrincipal.update()
         elif e.control.selected_index == 2:
             contenedorPrincipal.content= ui_baja_posgrado.main(page)
-            contenedorPrincipal.update()            
-        elif e.control.selected_index == 3:
-            contenedorPrincipal.content= ui_reportes_posgrado.main(page)
-            contenedorPrincipal.update()            
-    
+            contenedorPrincipal.update()
+            
     page.title = "Sistema Posgrado"
     page.theme_mode = "light"
     appBar = ft.AppBar(title=ft.Text("Sistema De Adminstración"),
