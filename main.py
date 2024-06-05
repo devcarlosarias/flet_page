@@ -10,10 +10,13 @@ def main(page: ft.Page):
                        color="white")
     page.appbar = appBar
        
+    logo_ujat = ft.Image(src="https://github.com/vjcarlosedit/flet_page/raw/main/assets/logo-ujat.png", width=200)
+    
     txtBienvenido = ft.Text("¡Bienvenido!", size=24, text_align="center", color="green")
     txtDatos = ft.Text("Av. Universidad s/n, Zona de la Cultura, Col. Magisterial, Vhsa, Centro, Tabasco, Mex. C.P. 86040. Tel (993) 358 15 00", size=10, text_align="center", color="green",)
     
     page.add(txtBienvenido)
+    page.add(logo_ujat)
     page.add(txtDatos)
     page.update()    
 
