@@ -10,14 +10,22 @@ def main(page: ft.Page):
                        color="white")
     page.appbar = appBar
        
-    logo_ujat = ft.Image(src="https://github.com/vjcarlosedit/flet_page/raw/main/assets/logo-ujat.png", width=200)
+    logo_ujat = ft.Image(src="https://raw.githubusercontent.com/vjcarlosedit/flet_page/main/assets/logo-ujat.png", width=250)
+    filaLogo = ft.Row([logo_ujat], alignment="center")
     
-    txtBienvenido = ft.Text("¡Bienvenido!", size=24, text_align="center", color="green")
-    txtDatos = ft.Text("Av. Universidad s/n, Zona de la Cultura, Col. Magisterial, Vhsa, Centro, Tabasco, Mex. C.P. 86040. Tel (993) 358 15 00", size=10, text_align="center", color="green",)
+    txtBienvenido = ft.Text("¡Bienvenido!", size=28, text_align="center", color="green")
+    filatxtBienvenido = ft.Row([txtBienvenido], alignment="center")
+
+    txtDatos = ft.Text("Av. Universidad s/n, Zona de la Cultura, Col. Magisterial, Vhsa, Centro, Tabasco, Mex. C.P. 86040. Tel (993) 358 15 00", size=14, text_align="center", color="green",)
+    filatxtDatos = ft.Row([txtDatos], alignment="center")
     
-    page.add(txtBienvenido)
-    page.add(logo_ujat)
-    page.add(txtDatos)
+    contenido = ft.Column(
+        [filatxtBienvenido,filaLogo,filatxtDatos], 
+        alignment="center",
+        spacing=50
+    )    
+
+    page.add(contenido)
     page.update()    
 
 ft.app(main, view=ft.AppView.WEB_BROWSER)
