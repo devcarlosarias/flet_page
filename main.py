@@ -25,7 +25,20 @@ def main(page: ft.Page):
         spacing=50
     )    
 
-    page.add(contenido)
+    btnNuevoPosgrado = ft.NavigationRailDestination(label="Nuevo Posgrado", icon="add_circle_outline", selected_icon="add_circle")
+    btnNuevoResponsable = ft.NavigationRailDestination(label="Nuevo Responsable", icon="person_add_outlined", selected_icon="person_add_rounded")
+    btnBajaPosgrado = ft.NavigationRailDestination(label="Bajas De Posgrados", icon="ARCHIVE_OUTLINED", selected_icon="ARCHIVE")
+    btnReportesPosgrado = ft.NavigationRailDestination(label="Reportes Posgrados", icon="TABLE_CHART_OUTLINED", selected_icon="TABLE_CHART_ROUNDED")
+    btnReportesResponsable = ft.NavigationRailDestination(label="Reportes Responsables", icon="TABLE_CHART_OUTLINED", selected_icon="TABLE_CHART_ROUNDED")
+    btnReportesDivision = ft.NavigationRailDestination(label="Reportes División", icon="TABLE_CHART_OUTLINED", selected_icon="TABLE_CHART_ROUNDED")
+    
+    listaBotones = [btnNuevoPosgrado, btnNuevoResponsable, btnBajaPosgrado, btnReportesPosgrado, btnReportesResponsable, btnReportesDivision]
+
+    navRail = ft.NavigationRail(bgcolor="green50", destinations=listaBotones)
+    contenedorPrincipal = ft.Container(content=contenido, expand=True)
+    fila = ft.Row([navRail, contenedorPrincipal], expand=True)
+
+    page.add(fila)
     page.update()    
 
 ft.app(main, view=ft.AppView.WEB_BROWSER)
