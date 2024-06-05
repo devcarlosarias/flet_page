@@ -54,7 +54,7 @@ def main(page: ft.Page):
 
     tblPosgrado = ft.DataTable(columns=encabezado, rows=lista_tabla, heading_row_color="grey200", border=ft.border.all(2, "grey200"))
 
-    columna = ft.Column([tblPosgrado])
+    columna = ft.Column([tblPosgrado], scroll=True)
     return columna    
 
 if __name__ == "__main__":
