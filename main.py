@@ -11,7 +11,7 @@ def main(page: ft.Page):
                        color="white")
     page.appbar = appBar
         
-    txtBienvenido = ft.Text("¡Bienvenido!", size=24, text_align="center", width=page.window_width, color="green")
+    txtBienvenido = ft.Text("¡Bienvenido! hola a todos")
     page.add(txtBienvenido)
     page.update()    
 
